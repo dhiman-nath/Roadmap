@@ -13,7 +13,7 @@ class VoteController extends Controller
    public function upvote(Request $request, $id)
     {
         try {
-            $user = Auth::user(); // ✅ Get authenticated user
+            $user = Auth::user();
 
             if (!$user) {
                 return response()->json([
@@ -33,10 +33,10 @@ class VoteController extends Controller
                 return response()->json([
                     'success' => false,
                     'message' => 'You have already upvoted this item.',
-                ], 409); // 409 = Conflict
+                ], 409); 
             }
 
-            
+
             Vote::create([
                 'user_id' => $user->id,
                 'item_id' => $item->id,

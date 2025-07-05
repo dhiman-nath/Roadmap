@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2025 at 04:36 PM
+-- Generation Time: Jul 05, 2025 at 01:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -79,7 +79,8 @@ INSERT INTO `comments` (`id`, `user_id`, `item_id`, `parent_id`, `comment_text`,
 (25, 5, 1, NULL, 'trytytreyt', '2025-06-24 07:44:31', '2025-06-24 07:44:31'),
 (26, 5, 1, NULL, 'ererererer', '2025-06-24 07:55:17', '2025-06-24 07:55:17'),
 (27, 5, 1, NULL, 'wewqewwwwwwwwwwwwwwwwwwwww', '2025-06-24 07:55:28', '2025-06-24 07:55:28'),
-(28, 5, 1, NULL, 'wqewewe', '2025-06-24 07:56:03', '2025-06-24 07:56:03');
+(28, 5, 1, NULL, 'wqewewe', '2025-06-24 07:56:03', '2025-06-24 07:56:03'),
+(30, 7, 1, NULL, 'hvvv', '2025-07-05 03:41:20', '2025-07-05 03:41:20');
 
 -- --------------------------------------------------------
 
@@ -121,7 +122,10 @@ CREATE TABLE `items` (
 INSERT INTO `items` (`id`, `item_name`, `description`, `status`, `category_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 'Dark mode support', 'Add an option to switch to a dark theme', 1, 1, 1, NULL, NULL),
 (2, 'Improved Performance', 'Optimize the application load faster', 1, 2, 1, NULL, NULL),
-(3, 'New Feature A', 'Description For a new feature', 1, 3, 1, NULL, NULL);
+(3, 'New Feature A', 'Description For a new feature', 1, 3, 1, NULL, NULL),
+(4, 'New item feature', 'Very effective', 1, 1, 7, NULL, NULL),
+(5, 'Two-Factor Authentication', 'Two-Factor Authentication', 1, 3, 5, NULL, NULL),
+(6, 'Multi-language Support', 'Add localization support for multiple languages.', 1, 2, 5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -197,7 +201,11 @@ INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `n
 (23, 'App\\Models\\User', 5, 'api', 'e283971da04bd0ab8ac01e22439f9a3f7faecbd48571559aa531d156cd88889f', '[\"*\"]', '2025-06-24 07:31:10', NULL, '2025-06-24 07:29:53', '2025-06-24 07:31:10'),
 (24, 'App\\Models\\User', 5, 'api', 'e34fa3aeb06706aec3f1d429583774fb183cbc665928116e29b27adb850d9180', '[\"*\"]', '2025-06-24 07:31:25', NULL, '2025-06-24 07:31:24', '2025-06-24 07:31:25'),
 (25, 'App\\Models\\User', 5, 'api', 'b69bad180435e5f00ebbcfcdd6bab5d2686c5e7393c2cc1d5416004c6fc2955b', '[\"*\"]', '2025-06-24 08:09:34', NULL, '2025-06-24 07:31:36', '2025-06-24 08:09:34'),
-(26, 'App\\Models\\User', 5, 'api', '9f444d914074980c1293bc9965ebab0c7614908cf096e4a79738c7923520d5bb', '[\"*\"]', '2025-06-24 08:15:16', NULL, '2025-06-24 08:15:16', '2025-06-24 08:15:16');
+(26, 'App\\Models\\User', 5, 'api', '9f444d914074980c1293bc9965ebab0c7614908cf096e4a79738c7923520d5bb', '[\"*\"]', '2025-06-24 08:15:16', NULL, '2025-06-24 08:15:16', '2025-06-24 08:15:16'),
+(27, 'App\\Models\\User', 5, 'api', 'b7ed97a1cd0b9bb734d71054d34ff751f2032916d82e98093a8fea55aef8134a', '[\"*\"]', '2025-07-05 03:32:15', NULL, '2025-06-30 03:55:30', '2025-07-05 03:32:15'),
+(28, 'App\\Models\\User', 7, 'api', 'cc72bad9f2b43c6c8d879a179645448d1e2659f629eee83bd3bd62692ffb3a99', '[\"*\"]', NULL, NULL, '2025-07-05 03:35:16', '2025-07-05 03:35:16'),
+(29, 'App\\Models\\User', 7, 'api', '5b2528652da9beb4d71fb57241c30756a0799d1e3adf869aff1b5ec51dad5df6', '[\"*\"]', '2025-07-05 04:40:57', NULL, '2025-07-05 03:35:23', '2025-07-05 04:40:57'),
+(30, 'App\\Models\\User', 7, 'api', 'a0ff88655d36faf78b89ecdca199ebbcf62ae5d1dc55e9979fd4a4e7231b67b4', '[\"*\"]', '2025-07-05 04:34:27', NULL, '2025-07-05 04:33:58', '2025-07-05 04:34:27');
 
 -- --------------------------------------------------------
 
@@ -225,7 +233,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 (3, 'Joyanta Dutta', 'joy123@gmail.com', '$2y$12$gN1uA41Sn9wLfHdR6tKoBeD7/q5T4DUP47.5BhXPZEE4KyruIeGye', NULL, '2025-06-23 03:05:27', '2025-06-23 03:05:27'),
 (4, 'Imran vai degree', 'shariar@gmail.com', '$2y$12$ltOWFLWxpkeeSueTJDycyO0896/gE8I90V6WY2Tw1fOeJWQx8RJbG', NULL, '2025-06-23 23:05:25', '2025-06-23 23:05:25'),
 (5, 'Shama Devi', 'shama@gmail.com', '$2y$12$AleC8JMFK2fAr3eMl1Inbudpxn1..heTaTbE8LiKUZHPc7lXu/CuO', NULL, '2025-06-23 23:44:22', '2025-06-23 23:44:22'),
-(6, 'Anisur Rahman Akib', 'dabinharis@gmail.com', '$2y$12$L.7Cp3Elccysw6e/tfSkiu7eyofp/9/T/8mTPhWKoFQYb/1m1kWsm', NULL, '2025-06-23 23:54:28', '2025-06-23 23:54:28');
+(6, 'Anisur Rahman Akib', 'dabinharis@gmail.com', '$2y$12$L.7Cp3Elccysw6e/tfSkiu7eyofp/9/T/8mTPhWKoFQYb/1m1kWsm', NULL, '2025-06-23 23:54:28', '2025-06-23 23:54:28'),
+(7, 'Shimanta Sagar', 'manta@gmail.com', '$2y$12$RKadD9SQDuLBmeBSd132EuNZMVFajDNLaNpoGOwZpH5yKoj5kKSRm', NULL, '2025-07-05 03:35:16', '2025-07-05 03:35:16');
 
 -- --------------------------------------------------------
 
@@ -249,7 +258,10 @@ INSERT INTO `votes` (`id`, `user_id`, `item_id`, `created_at`, `updated_at`) VAL
 (1, 1, 2, '2025-06-23 03:07:17', '2025-06-23 03:07:17'),
 (2, 5, 2, '2025-06-24 00:53:59', '2025-06-24 00:53:59'),
 (3, 5, 1, '2025-06-24 00:54:06', '2025-06-24 00:54:06'),
-(4, 5, 3, '2025-06-24 02:26:07', '2025-06-24 02:26:07');
+(4, 5, 3, '2025-06-24 02:26:07', '2025-06-24 02:26:07'),
+(5, 7, 1, '2025-07-05 03:35:27', '2025-07-05 03:35:27'),
+(6, 7, 2, '2025-07-05 03:35:32', '2025-07-05 03:35:32'),
+(7, 7, 4, '2025-07-05 04:40:52', '2025-07-05 04:40:52');
 
 --
 -- Indexes for dumped tables
@@ -335,7 +347,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -347,7 +359,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -359,19 +371,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
