@@ -137,10 +137,30 @@ const Comment = ({ itemId, onCommentAction }) => {
         )
         }
         {comment.user_id === currentUserId && (
-          <a href='#' className="!text-red-600 underline hover:opacity-80" onClick={(e) => {
-            e.preventDefault();
-            deleteComment(comment.id);
-        }}>Delete</a>
+        <a
+  href="#"
+  className="!text-red-600 underline hover:opacity-80"
+  onClick={(e) => {
+    e.preventDefault();
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You won’t be able to recover this comment!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteComment(comment.id);
+        Swal.fire('Deleted!', 'Your comment has been deleted.', 'success');
+      }
+    });
+  }}
+>
+  Delete
+</a>
+
         )}
       </div>
     </div>
